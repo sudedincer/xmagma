@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>xmagma | Coming Soon</title>
+    <meta
+      name="description"
+      content="xmagma yeni yuvasını hazırlıyor. Balıkçılar için çok yakında."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <video
+        class="background-video"
+        id="backgroundVideo"
+        autoplay
+        loop
+        playsinline
+        preload="auto"
+      >
+        <source src="assets/background.mp4" type="video/mp4" />
+      </video>
+
+      <div class="video-tint"></div>
+      <div class="video-grid"></div>
+      <div class="vignette"></div>
+
+      <button class="audio-gate hidden" id="audioGate" type="button" aria-label="Sesi aç"></button>
+
+      <main class="hero">
+        <div class="brand-mark">
+          <span class="brand-mark__line"></span>
+          <span class="brand-mark__name">xmagma</span>
+          <span class="brand-mark__line"></span>
+        </div>
+
+        <section class="content-card">
+          <h1 class="reveal reveal-title">Büyük bir şey geliyor.</h1>
+          <p class="lead reveal reveal-copy">
+            Dünyanın dört bir yanındaki balıkçılar için yeni bir yuva inşa
+            ediyoruz.
+          </p>
+          <p class="soon reveal reveal-soon">Çok Yakında…</p>
+
+          <div class="divider reveal reveal-divider"></div>
+
+          <div class="english-block reveal reveal-english">
+            <p>Something big is coming.</p>
+            <p>We’re building a new home for anglers around the world.</p>
+            <p class="english-block__soon">Coming Soon.</p>
+          </div>
+
+          <div class="social-links reveal reveal-social">
+            <a
+              class="social-link"
+              href="https://instagram.com/xmagma.tr"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span class="social-link__label">Instagram TR</span>
+              
+            </a>
+            <a
+              class="social-link"
+              href="https://instagram.com/xmagma.en"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span class="social-link__label">Instagram ENG</span>
+              
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <button class="sound-toggle" id="soundToggle" type="button" aria-label="Ses durumu">
+        <img src="assets/xmagma.jpeg" alt="xmagma" />
+      </button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
