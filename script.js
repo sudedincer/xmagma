@@ -3,6 +3,7 @@ const audioGate = document.getElementById("audioGate");
 const soundToggle = document.getElementById("soundToggle");
 
 let audioEnabled = false;
+let firstInteractionHandled = false;
 
 function setSoundToggleState(label, ariaLabel) {
   soundToggle.setAttribute("aria-label", ariaLabel);
@@ -51,7 +52,23 @@ soundToggle.addEventListener("click", async () => {
   await playWithAudio();
 });
 
+document.addEventListener(
+  "pointerdown",
+  async (event) => {
+    if (firstInteractionHandled || event.target.closest("#soundToggle")) {
+      return;
+    }
+
+    firstInteractionHandled = true;
+    await playWithAudio();
+  },
+  { capture: true }
+);
+
 window.addEventListener("load", async () => {
-  setSoundToggleState("Sound Off", "Sesi aç");
-  await playMutedFallback();
+  await playWithAudio();
+
+  if (!audioEnabled) {
+    await playMutedFallback();
+  }
 });

@@ -52,11 +52,13 @@ button {
 }
 
 .background-video {
-  width: 100%;
+  left: -3%;
+  right: auto;
+  width: 104%;
   height: 100%;
   object-fit: cover;
   object-position: center 44%;
-  transform: translateX(-3%) scale(1.04);
+  transform: none;
   filter: saturate(1.22) contrast(1.18) brightness(1.08);
 }
 
@@ -405,14 +407,21 @@ h1 span {
   box-shadow: 0 0 22px rgba(205, 164, 94, 0.24);
 }
 
-.sound-toggle,
-.audio-gate {
+.sound-toggle {
   position: relative;
   z-index: 3;
   border: 1px solid rgba(255, 255, 255, 0.28);
   background: rgba(4, 10, 14, 0.18);
   color: var(--text);
   backdrop-filter: blur(8px);
+}
+
+.audio-gate {
+  position: relative;
+  z-index: 3;
+  border: 0;
+  background: transparent;
+  color: var(--text);
 }
 
 .sound-toggle {
@@ -461,12 +470,12 @@ h1 span {
 @keyframes rise {
   from {
     opacity: 0;
-    transform: translateY(40px) scale(0.98);
+    transform: translateY(24px);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
   }
 }
 
