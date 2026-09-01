@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>xmagma | Coming Soon</title>
+    <title>XMAGMA | Coming Soon</title>
     <meta
       name="description"
       content="xmagma yeni yuvasını hazırlıyor. Balıkçılar için çok yakında."
@@ -14,6 +14,8 @@
       href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" type="image/jpeg" href="assets/xmagma.jpeg" />
+    <link rel="apple-touch-icon" href="assets/xmagma.jpeg" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -23,6 +25,7 @@
         id="backgroundVideo"
         autoplay
         loop
+        muted
         playsinline
         preload="auto"
       >
@@ -36,19 +39,31 @@
       <button class="audio-gate hidden" id="audioGate" type="button" aria-label="Sesi aç"></button>
 
       <main class="hero">
-        <div class="brand-mark">
-          <span class="brand-mark__line"></span>
-          <span class="brand-mark__name">xmagma</span>
-          <span class="brand-mark__line"></span>
-        </div>
-
         <section class="content-card">
-          <h1 class="reveal reveal-title">Büyük bir şey geliyor.</h1>
+          <h1 class="reveal reveal-title">
+            <Bir>Büyük Bir Şey Geliyor</span>
+          </h1>
           <p class="lead reveal reveal-copy">
             Dünyanın dört bir yanındaki balıkçılar için yeni bir yuva inşa
             ediyoruz.
           </p>
           <p class="soon reveal reveal-soon">Çok Yakında…</p>
+
+          <div class="shop-callout reveal reveal-shop">
+            <p class="shop-callout__text">
+              Sitemizde satış altyapısı hazırlanıyor. Ürünlerimize güvenli alışveriş için Shopier mağazamızdan ulaşabilirsiniz.
+            </p>
+            <a
+              class="shop-button"
+              href="https://www.shopier.com/xmagmafishingtr"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="xmagma Shopier mağazamızdan alışveriş yapmak için tıkla"
+            >
+              <span class="shop-button__label">Shopier Mağazamızdan Alışveriş Yapmak İçin Tıkla</span>
+              <span class="shop-button__arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
 
           <div class="divider reveal reveal-divider"></div>
 

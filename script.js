@@ -52,9 +52,6 @@ soundToggle.addEventListener("click", async () => {
 });
 
 window.addEventListener("load", async () => {
-  await playWithAudio();
-
-  if (!audioEnabled) {
-    await playMutedFallback();
-  }
+  setSoundToggleState("Sound Off", "Sesi aç");
+  await playMutedFallback();
 });
