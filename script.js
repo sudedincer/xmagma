@@ -1,9 +1,17 @@
 const video = document.getElementById("backgroundVideo");
 const audioGate = document.getElementById("audioGate");
 const soundToggle = document.getElementById("soundToggle");
+const playbackRate = 0.5;
 
 let audioEnabled = false;
 let firstInteractionHandled = false;
+
+function applyPlaybackRate() {
+  video.defaultPlaybackRate = playbackRate;
+  video.playbackRate = playbackRate;
+}
+
+applyPlaybackRate();
 
 function setSoundToggleState(label, ariaLabel) {
   soundToggle.setAttribute("aria-label", ariaLabel);
@@ -11,11 +19,13 @@ function setSoundToggleState(label, ariaLabel) {
 }
 
 async function playWithAudio() {
+  applyPlaybackRate();
   video.muted = false;
   video.volume = 1;
 
   try {
     await video.play();
+    applyPlaybackRate();
     audioEnabled = true;
     audioGate.classList.add("hidden");
     setSoundToggleState("Sound On", "Sesi kapat");
@@ -27,10 +37,12 @@ async function playWithAudio() {
 }
 
 async function playMutedFallback() {
+  applyPlaybackRate();
   video.muted = true;
 
   try {
     await video.play();
+    applyPlaybackRate();
   } catch (error) {
     // If even muted autoplay fails, the overlay remains as the manual start path.
     audioGate.classList.remove("hidden");
@@ -50,6 +62,14 @@ soundToggle.addEventListener("click", async () => {
   }
 
   await playWithAudio();
+});
+
+video.addEventListener("loadedmetadata", applyPlaybackRate);
+video.addEventListener("play", applyPlaybackRate);
+video.addEventListener("ratechange", () => {
+  if (video.playbackRate !== playbackRate) {
+    applyPlaybackRate();
+  }
 });
 
 document.addEventListener(
