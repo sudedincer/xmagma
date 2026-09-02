@@ -287,6 +287,10 @@ h1 span {
   z-index: 1;
 }
 
+.shop-button__line {
+  display: inline;
+}
+
 .shop-button__arrow {
   display: inline-grid;
   place-items: center;
@@ -558,6 +562,18 @@ h1 span {
     padding: 13px 14px;
     font-size: 0.62rem;
     letter-spacing: 0.03em;
+  }
+
+  .shop-button__label {
+    display: grid;
+    justify-items: center;
+    gap: 2px;
+    line-height: 1.22;
+    text-align: center;
+  }
+
+  .shop-button__line {
+    display: block;
   }
 
   .shop-button__arrow {
